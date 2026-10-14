@@ -1,0 +1,89 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function validEmail(value) {
+      return value is string
+        && value.size() <= 254
+        && value.matches('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$');
+    }
+
+    function validPhone(value) {
+      return value is string
+        && value.size() >= 7
+        && value.size() <= 24
+        && value.matches('^[+()0-9. -]+$');
+    }
+
+    function validName(value, maxLength) {
+      return value is string && value.size() >= 2 && value.size() <= maxLength;
+    }
+
+    function validBloodGroup(value) {
+      return value in ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
+    }
+
+    function isCoordinator() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/coordinators/$(request.auth.uid))
+        && get(/databases/$(database)/documents/coordinators/$(request.auth.uid)).data.active == true
+        && get(/databases/$(database)/documents/coordinators/$(request.auth.uid)).data.role == 'coordinator';
+    }
+
+    function validDonor(data) {
+      return data.keys().hasAll(['fullName', 'email', 'phone', 'bloodGroup', 'city', 'cityKey', 'contactPreference', 'consent', 'createdAt'])
+        && data.keys().hasOnly(['fullName', 'email', 'phone', 'bloodGroup', 'city', 'cityKey', 'contactPreference', 'consent', 'createdAt'])
+        && validName(data.fullName, 80)
+        && validEmail(data.email)
+        && validPhone(data.phone)
+        && validBloodGroup(data.bloodGroup)
+        && validName(data.city, 80)
+        && data.cityKey is string
+        && data.cityKey.size() >= 2
+        && data.cityKey.size() <= 80
+        && data.contactPreference in ['phone', 'email']
+        && data.consent == true
+        && data.createdAt == request.time;
+    }
+
+    function validRequest(data) {
+      return data.keys().hasAll(['patientName', 'contactName', 'email', 'phone', 'hospital', 'city', 'bloodGroup', 'units', 'urgency', 'neededBy', 'consent', 'createdAt'])
+        && data.keys().hasOnly(['patientName', 'contactName', 'email', 'phone', 'hospital', 'city', 'bloodGroup', 'units', 'urgency', 'neededBy', 'consent', 'createdAt'])
+        && validName(data.patientName, 80)
+        && validName(data.contactName, 80)
+        && validEmail(data.email)
+        && validPhone(data.phone)
+        && validName(data.hospital, 120)
+        && validName(data.city, 80)
+        && validBloodGroup(data.bloodGroup)
+        && data.units is int
+        && data.units >= 1
+        && data.units <= 10
+        && data.urgency in ['urgent', 'within-24-hours', 'planned']
+        && data.neededBy is string
+        && data.neededBy.matches('^\\d{4}-\\d{2}-\\d{2}$')
+        && data.consent == true
+        && data.createdAt == request.time;
+    }
+
+    match /coordinators/{userId} {
+      allow get: if request.auth != null && request.auth.uid == userId;
+      allow list, create, update, delete: if false;
+    }
+
+    match /donors/{submissionId} {
+      allow create: if validDonor(request.resource.data);
+      allow get, list: if isCoordinator();
+      allow update, delete: if false;
+    }
+
+    match /requests/{submissionId} {
+      allow create: if validRequest(request.resource.data);
+      allow get, list: if isCoordinator();
+      allow update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff8f5" />
+    <meta
+      name="description"
+      content="BloodConnect helps blood donors and people who need blood connect. Register as a donor or submit a blood request."
+    />
+    <title>BloodConnect — Give blood. Give someone more time.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+    <script type="module" src="./src/main.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="BloodConnect home">
+          <span class="brand-mark" aria-hidden="true">+</span>
+          <span>blood<span class="brand-light">connect</span></span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#find-donor">Find a donor</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#about">Why donate</a>
+          <a href="#faq">FAQs</a>
+        </nav>
+        <a class="button button-small button-primary header-cta" href="#donate">Become a donor <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="pulse-dot"></span> A community that shows up</div>
+            <h1>Give blood.<br />Give someone<br /><span>more time.</span></h1>
+            <p class="hero-description">
+              A simple way to step up when it matters. Join local donors or let your community know someone needs blood.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#donate">I want to donate <span aria-hidden="true">↗</span></a>
+              <a class="button button-secondary" href="#request">I need blood <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="hero-note"><span class="note-icon" aria-hidden="true">♡</span> Every willing donor can make a difference.</div>
+          </div>
+          <div class="hero-art" aria-label="Illustration of a blood donation bag connected to a heart">
+            <div class="art-circle art-circle-large"></div>
+            <div class="art-circle art-circle-small"></div>
+            <svg class="donation-art" viewBox="0 0 470 460" role="img" aria-labelledby="art-title">
+              <title id="art-title">A blood bag and a heart, connected by a red ribbon</title>
+              <path d="M238 84c0 54 78 52 78 111" class="art-ribbon" />
+              <path d="M316 195c-28 0-48 23-48 50 0 38 48 67 48 67s48-29 48-67c0-27-20-50-48-50Z" class="art-heart" />
+              <path d="M176 88h81v18h-81zM188 106h57v203c0 17-13 30-29 30h-1c-16 0-29-13-29-30V106Z" class="art-bag" />
+              <path d="M188 210h57v99c0 16-13 30-29 30s-28-14-28-30V210Z" class="art-blood" />
+              <path d="M208 340v24m18-24v24m-24 0h30" class="art-line" />
+              <path d="M202 145h29m-29 18h29" class="art-measure" />
+              <circle cx="149" cy="195" r="5" class="art-spark" />
+              <circle cx="386" cy="166" r="4" class="art-spark" />
+              <path d="m135 251 8 8m0-8-8 8m249-91 8 8m0-8-8 8" class="art-cross" />
+              <rect x="303" y="346" width="100" height="54" rx="16" class="art-card" />
+              <circle cx="325" cy="373" r="10" class="art-card-dot" />
+              <path d="M346 368h42m-42 11h30" class="art-card-line" />
+            </svg>
+            <div class="art-caption"><span class="caption-heart">♥</span><span><strong>Here for each other</strong><small>One community. Every blood type.</small></span></div>
+          </div>
+        </div>
+        <div class="hero-bottom container">
+          <span>ONE SMALL ACT. A WORLD OF DIFFERENCE.</span>
+          <span class="hero-bottom-line"></span>
+          <a href="#how-it-works" aria-label="Scroll to learn how it works">↓</a>
+        </div>
+      </section>
+
+      <section class="pathways section-pad" id="connect">
+        <div class="container">
+          <div class="section-heading centered">
+            <div class="eyebrow"><span class="eyebrow-dash"></span> Make your next move</div>
+            <h2>Two ways to be there<br />for someone.</h2>
+            <p>Whether you're ready to give or looking for help, start right here.</p>
+          </div>
+          <div class="pathway-grid">
+            <article class="pathway-card donor-card" id="donate">
+              <div class="pathway-icon donor-icon" aria-hidden="true">♥</div>
+              <span class="card-kicker">FOR THE GIVERS</span>
+              <h3>Become a donor</h3>
+              <p>Share your details so your local community can reach you when a donation is needed.</p>
+              <a href="#donor-form" class="text-link">Register as a donor <span aria-hidden="true">↗</span></a>
+              <div class="card-decoration" aria-hidden="true">+</div>
+            </article>
+            <article class="pathway-card request-card" id="request">
+              <div class="pathway-icon request-icon" aria-hidden="true">♡</div>
+              <span class="card-kicker">FOR THOSE WHO NEED HELP</span>
+              <h3>Request blood</h3>
+              <p>Tell us what is needed and where. Your request will be shared securely with the team managing this service.</p>
+              <a href="#request-form" class="text-link">Submit a blood request <span aria-hidden="true">↗</span></a>
+              <div class="card-decoration" aria-hidden="true">+</div>
+            </article>
+          </div>
+          <p class="privacy-note"><span aria-hidden="true">🔒</span> Your contact details are kept private and are never shown in a public donor directory.</p>
+        </div>
+      </section>
+
+      <section class="donor-search section-pad" id="find-donor">
+        <div class="container donor-search-layout">
+          <div class="section-heading">
+            <div class="eyebrow"><span class="eyebrow-dash"></span> For authorized coordinators</div>
+            <h2>Find a donor<br />in your community.</h2>
+            <p>Search by blood group and city. Donor details are only available to approved coordinators.</p>
+          </div>
+          <div class="coordinator-panel">
+            <form class="coordinator-login" id="coordinator-login" novalidate>
+              <h3>Coordinator sign in</h3>
+              <p>Use the email and password provided by your BloodConnect administrator.</p>
+              <div class="field-grid">
+                <label class="field field-full">Email address
+                  <input name="email" type="email" autocomplete="username" maxlength="254" required placeholder="coordinator@example.com" />
+                </label>
+                <label class="field field-full">Password
+                  <input name="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" required placeholder="Your password" />
+                </label>
+              </div>
+              <button class="button button-primary form-submit" type="submit">Sign in <span aria-hidden="true">↗</span></button>
+              <p class="coordinator-status" id="coordinator-status" aria-live="polite" role="status"></p>
+            </form>
+            <div class="coordinator-tools" id="coordinator-tools" hidden>
+              <div class="coordinator-toolbar">
+                <div><span class="form-number">PRIVATE COORDINATOR ACCESS</span><h3>Search registered donors</h3><p id="coordinator-account"></p></div>
+                <button class="button button-secondary coordinator-signout" id="coordinator-signout" type="button">Sign out</button>
+              </div>
+              <form class="donor-search-form" id="donor-search-form" novalidate>
+                <div class="field-grid">
+                  <label class="field">Blood group
+                    <select name="bloodGroup" required>
+                      <option value="" disabled selected>Select blood group</option>
+                      <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                      <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+                    </select>
+                  </label>
+                  <label class="field">City or town
+                    <input name="city" type="text" minlength="2" maxlength="80" required placeholder="Enter a city" />
+                  </label>
+                </div>
+                <button class="button button-primary form-submit" type="submit">Search donors <span aria-hidden="true">⌕</span></button>
+                <p class="coordinator-status" id="search-status" aria-live="polite" role="status"></p>
+              </form>
+              <div class="donor-results" id="donor-results" aria-live="polite"></div>
+            </div>
+            <p class="coordinator-setup-note">Firebase must be configured and the coordinator account authorized before donor search is available.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="forms-section section-pad">
+        <div class="container form-layout">
+          <div class="form-intro">
+            <div class="eyebrow"><span class="eyebrow-dash"></span> Take the first step</div>
+            <h2>It starts with <br /><span>showing up.</span></h2>
+            <p>Fill in the form that fits your situation. A coordinator can follow up using the contact details you provide.</p>
+            <div class="form-reassurance">
+              <div class="reassurance-icon" aria-hidden="true">✓</div>
+              <div><strong>Your information stays private</strong><span>Only authorized service coordinators should access submissions.</span></div>
+            </div>
+            <div class="form-reassurance">
+              <div class="reassurance-icon" aria-hidden="true">♡</div>
+              <div><strong>Real people, ready to help</strong><span>A coordinator will use your details to follow up.</span></div>
+            </div>
+          </div>
+          <div class="form-column">
+            <form class="intake-form" id="donor-form" data-kind="donor" novalidate>
+              <div class="form-title-row">
+                <div><span class="form-number">01 / DONOR</span><h3>Register as a donor</h3></div>
+                <span class="form-heart" aria-hidden="true">♥</span>
+              </div>
+              <p class="form-description">Let us know a little about you. All fields are required.</p>
+              <div class="field-grid">
+                <label class="field field-full">Full name
+                  <input name="fullName" type="text" autocomplete="name" minlength="2" maxlength="80" required placeholder="Your full name" />
+                </label>
+                <label class="field">Email address
+                  <input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com" />
+                </label>
+                <label class="field">Phone number
+                  <input name="phone" type="tel" autocomplete="tel" minlength="7" maxlength="24" required placeholder="+1 555 000 0000" />
+                </label>
+                <label class="field">Blood group
+                  <select name="bloodGroup" required>
+                    <option value="" disabled selected>Select blood group</option>
+                    <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                    <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+                  </select>
+                </label>
+                <label class="field">City or town
+                  <input name="city" type="text" autocomplete="address-level2" minlength="2" maxlength="80" required placeholder="Where are you based?" />
+                </label>
+                <label class="field field-full">Preferred way to be contacted
+                  <select name="contactPreference" required>
+                    <option value="" disabled selected>Choose one</option>
+                    <option value="phone">Phone</option><option value="email">Email</option>
+                  </select>
+                </label>
+              </div>
+              <label class="consent"><input name="consent" type="checkbox" required /><span>I agree to be contacted about blood donation and understand my details will be stored securely.</span></label>
+              <button class="button button-primary form-submit" type="submit">Register as a donor <span aria-hidden="true">↗</span></button>
+              <p class="form-status" aria-live="polite" role="status"></p>
+            </form>
+
+            <form class="intake-form request-intake" id="request-form" data-kind="request" novalidate>
+              <div class="form-title-row">
+                <div><span class="form-number">02 / REQUEST</span><h3>Request blood</h3></div>
+                <span class="form-heart" aria-hidden="true">♡</span>
+              </div>
+              <p class="form-description">Share the essential details so a coordinator can follow up. All fields are required.</p>
+              <div class="field-grid">
+                <label class="field">Patient's name
+                  <input name="patientName" type="text" minlength="2" maxlength="80" required placeholder="Patient's full name" />
+                </label>
+                <label class="field">Your name
+                  <input name="contactName" type="text" autocomplete="name" minlength="2" maxlength="80" required placeholder="Contact person's name" />
+                </label>
+                <label class="field">Email address
+                  <input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com" />
+                </label>
+                <label class="field">Phone number
+                  <input name="phone" type="tel" autocomplete="tel" minlength="7" maxlength="24" required placeholder="+1 555 000 0000" />
+                </label>
+                <label class="field">Hospital or care center
+                  <input name="hospital" type="text" minlength="2" maxlength="120" required placeholder="Where is blood needed?" />
+                </label>
+                <label class="field">City or town
+                  <input name="city" type="text" minlength="2" maxlength="80" required placeholder="Location" />
+                </label>
+                <label class="field">Blood group needed
+                  <select name="bloodGroup" required>
+                    <option value="" disabled selected>Select blood group</option>
+                    <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                    <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+                  </select>
+                </label>
+                <label class="field">Units needed
+                  <input name="units" type="number" min="1" max="10" step="1" required placeholder="e.g. 2" />
+                </label>
+                <label class="field">How soon is it needed?
+                  <select name="urgency" required>
+                    <option value="" disabled selected>Select urgency</option>
+                    <option value="urgent">As soon as possible</option>
+                    <option value="within-24-hours">Within 24 hours</option>
+                    <option value="planned">Planned / later</option>
+                  </select>
+                </label>
+                <label class="field">Date needed
+                  <input name="neededBy" type="date" required />
+                </label>
+              </div>
+              <label class="consent"><input name="consent" type="checkbox" required /><span>I am authorized to share these details and agree that a coordinator may contact me about this request.</span></label>
+              <button class="button button-primary form-submit" type="submit">Send blood request <span aria-hidden="true">↗</span></button>
+              <p class="form-status" aria-live="polite" role="status"></p>
+              <p class="urgent-notice"><strong>Medical emergency?</strong> Contact your local emergency service and hospital blood bank directly. This form is not an emergency service.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="steps-section section-pad" id="how-it-works">
+        <div class="container">
+          <div class="section-heading">
+            <div class="eyebrow"><span class="eyebrow-dash"></span> Simple, human, helpful</div>
+            <h2>Good things happen<br />when we connect.</h2>
+          </div>
+          <div class="steps-grid">
+            <article class="step-card"><span class="step-index">01</span><div class="step-icon" aria-hidden="true">✎</div><h3>Share what you can</h3><p>Register as a donor or tell us about a blood request in your community.</p></article>
+            <article class="step-card"><span class="step-index">02</span><div class="step-icon" aria-hidden="true">⌕</div><h3>A coordinator follows up</h3><p>An authorized coordinator can use your contact details to help with next steps.</p></article>
+            <article class="step-card"><span class="step-index">03</span><div class="step-icon" aria-hidden="true">♡</div><h3>Care moves forward</h3><p>Donation eligibility and transfusion decisions are always confirmed by medical professionals.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="container about-inner">
+          <div class="about-art" aria-hidden="true"><span class="about-orbit"></span><span class="about-heart">♥</span><span class="about-plus">+</span><span class="about-spark">✦</span></div>
+          <div class="about-copy">
+            <div class="eyebrow"><span class="eyebrow-dash"></span> A little about donating</div>
+            <h2>Show up for your<br /><span>community.</span></h2>
+            <p>Donating blood is a generous way to support people in need. Whether you can donate today depends on your health, history, and local guidelines.</p>
+            <p>Talk with a qualified healthcare professional or your local blood service to confirm your eligibility and understand what to expect.</p>
+            <a href="#donor-form" class="button button-primary">Take the first step <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section section-pad" id="faq">
+        <div class="container faq-layout">
+          <div class="faq-heading">
+            <div class="eyebrow"><span class="eyebrow-dash"></span> Good to know</div>
+            <h2>A few things<br />you might wonder.</h2>
+            <p>Still unsure? Your local blood service can give you advice for your situation.</p>
+          </div>
+          <div class="faq-list">
+            <details><summary>Who can donate blood?<span aria-hidden="true">+</span></summary><p>Eligibility depends on your health, age, location, and other factors. A qualified healthcare professional or local blood service can tell you whether donating is right for you.</p></details>
+            <details><summary>What happens after I register?<span aria-hidden="true">+</span></summary><p>Your registration is stored privately for an authorized coordinator to follow up. Submitting this form does not guarantee a match or a donation appointment.</p></details>
+            <details><summary>Is this an emergency service?<span aria-hidden="true">+</span></summary><p>No. For an urgent medical need, contact your local emergency service and the hospital blood bank directly. Do not wait for a response to this form.</p></details>
+            <details><summary>Will my details be public?<span aria-hidden="true">+</span></summary><p>No public donor list is provided by this website. Your information should only be accessible to authorized service coordinators under the project's Firebase security rules.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing-cta">
+        <div class="container closing-inner">
+          <div><span class="closing-kicker">WHEN YOU'RE READY</span><h2>Someone out there<br />is glad you showed up.</h2></div>
+          <a href="#donor-form" class="button button-white">Become a donor <span aria-hidden="true">↗</span></a>
+          <span class="closing-heart" aria-hidden="true">♥</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-brand-block">
+          <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">+</span><span>blood<span class="brand-light">connect</span></span></a>
+          <p>Because showing up for each other matters.</p>
+        </div>
+        <div class="footer-links"><a href="#how-it-works">How it works</a><a href="#donate">Become a donor</a><a href="#request">Request blood</a><a href="#faq">FAQs</a></div>
+        <a class="footer-top" href="#home">Back to top ↑</a>
+      </div>
+      <div class="container footer-bottom"><span>© <span id="year"></span> BloodConnect</span><span>For urgent needs, contact your local emergency service or hospital blood bank.</span><a href="#home">Made with care <span aria-hidden="true">♥</span></a></div>
+    </footer>
+  </body>
+</html>
